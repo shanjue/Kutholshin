@@ -34,7 +34,7 @@ class DemoController extends Controller
         // return Datatables::of($users)->make(true);
         return DataTables::of($users)
             ->addColumn('action', function ($user) {
-                return 
+                return
                     '<a href="' . route('user.show', $user->id) . '" class="btn btn-xs btn-primary" style="margin-right:20px;"><i class="fa fa-eye"></i> View</a>' .
                     '<a href="' . route('user.edit', $user->id) . '" class="btn btn-xs btn-warning" style="margin-right:20px;"><i class="fa fa-edit"></i> Edit</a>' .
                     '<a href="' . route('user.destroy', $user->id) . '" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
@@ -56,6 +56,15 @@ class DemoController extends Controller
             ->addColumn('details_url', function ($user) {
                 return url('user/posts/' . $user->id);
             })
+            ->addColumn('postcount', function ($user) {
+                return  count($user->posts);
+            })
+            ->addColumn('action', function ($user) {
+                return
+                    '<a href="' . route('user.show', $user->id) . '" class="btn btn-xs btn-primary" style="margin-right:20px;"><i class="fa fa-eye"></i> View</a>' .
+                    '<a href="' . route('user.edit', $user->id) . '" class="btn btn-xs btn-warning" style="margin-right:20px;"><i class="fa fa-edit"></i> Edit</a>' .
+                    '<a href="' . route('user.destroy', $user->id) . '" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
+            })
             ->make(true);
     }
 
@@ -63,7 +72,14 @@ class DemoController extends Controller
     {
         $posts = User::find($user_id)->posts();
 
-        return Datatables::of($posts)->make(true);
+        return Datatables::of($posts)
+            ->addColumn('action', function ($post) {
+                return
+                    '<a href="" class="btn btn-xs btn-primary" style="margin-right:20px;"><i class="fa fa-eye"></i> View</a>' .
+                    '<a href="" class="btn btn-xs btn-warning" style="margin-right:20px;"><i class="fa fa-edit"></i> Edit</a>' .
+                    '<a href="" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
+            })
+            ->make(true);
     }
 
     public function datatable()

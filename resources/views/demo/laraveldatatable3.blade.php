@@ -19,6 +19,7 @@
 @endsection
 
 @section('content')
+
 <table class="table table-bordered" id="users-table">
     <thead>
         <tr>
@@ -26,8 +27,10 @@
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Count</th>
             <th>Created At</th>
             <th>Updated At</th>
+            <th>Action</th>
         </tr>
     </thead>
 </table>
@@ -43,6 +46,7 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
+                <th>Action</th>
             </tr>
             </thead>
         </table>
@@ -74,6 +78,11 @@
                 name: 'email'
             },
             {
+                data: 'postcount',
+                name: 'postcount',
+                orderable: false, searchable: false
+            },
+            {
                 data: 'created_at',
                 name: 'created_at'
             },
@@ -81,7 +90,7 @@
                 data: 'updated_at',
                 name: 'updated_at'
             },
-
+            {data: 'action', name: 'action', orderable: false, searchable: false},
         ],
         order: [
             [1, 'asc']
@@ -114,7 +123,8 @@
             ajax: data.details_url,
             columns: [
                 { data: 'id', name: 'id' },
-                { data: 'title', name: 'title' }
+                { data: 'title', name: 'title' },
+                { data: 'action', name: 'action', orderable: false, searchable: false },
             ]
         })
     }
