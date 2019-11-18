@@ -6,7 +6,14 @@ require('bootstrap');
 
 require('select2');
 
-require('datatables.net-dt');
+require('datatables.net-bs4');
+
+require('datatables.net-buttons-bs4');
+
+// require('datatables.net-dt');
+
+window.Handlebars = require('handlebars');
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

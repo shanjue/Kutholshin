@@ -86,6 +86,8 @@
 
                 <div class="links">
                     <a href="{{route('datatable')}}">Datatable with bs-4</a>
+                    <a href="{{route('laraveldatatable')}}">Simple Laravel Datatable</a>
+                    <a href="{{route('laraveldatatable2')}}">Laravel Datatable With Edit Delete</a>
                     <a href="{{route('select2')}}">Select2</a>
                 </div>
             </div>
