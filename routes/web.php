@@ -1,12 +1,5 @@
 <?php
 
-use App\DataTables\UsersDataTable;
-
-Route::get('export', function(UsersDataTable $dataTable) {
-    return $dataTable->render('export.user');
-});
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,24 +41,27 @@ Route::prefix('backend')->namespace('Backend')->group(function () {
 Route::get('home', 'HomeController@index')->name('home');
 
 //Success Demo 
-Route::get('kutholshin','DemoController@kutholshin')->name('kutholshin');
+Route::get('kutholshin', 'DemoController@kutholshin')->name('kutholshin');
 
-Route::get('datatable','DemoController@datatable')->name('datatable');
+Route::get('datatable', 'DemoController@datatable')->name('datatable');
 Route::post('datatable', 'DemoController@postDatatable');
 
-Route::get('laraveldatatable','DemoController@laravelDatatable')->name('laraveldatatable');
-Route::get('datalaraveldatatable','DemoController@dataLaravelDatatable')->name('laraveldatatable.data');
+Route::get('laraveldatatable', 'DemoController@laravelDatatable')->name('laraveldatatable');
+Route::get('datalaraveldatatable', 'DemoController@dataLaravelDatatable')->name('laraveldatatable.data');
 
-Route::get('laraveldatatable2','DemoController@laravelDatatable2')->name('laraveldatatable2');
-Route::get('datalaraveldatatable2','DemoController@dataLaravelDatatable2')->name('laraveldatatable2.data');
+Route::get('laraveldatatable2', 'DemoController@laravelDatatable2')->name('laraveldatatable2');
+Route::get('datalaraveldatatable2', 'DemoController@dataLaravelDatatable2')->name('laraveldatatable2.data');
 
-Route::get('laraveldatatable3','DemoController@laravelDatatable3')->name('laraveldatatable3');
-Route::get('datalaraveldatatable3','DemoController@dataLaravelDatatable3')->name('laraveldatatable3.data');
-Route::get('user/posts/{user_id}','DemoController@userPosts');
+Route::get('laraveldatatable3', 'DemoController@laravelDatatable3')->name('laraveldatatable3');
+Route::get('datalaraveldatatable3', 'DemoController@dataLaravelDatatable3')->name('laraveldatatable3.data');
+Route::get('user/posts/{user_id}', 'DemoController@userPosts');
 
-Route::get('select2','DemoController@select2')->name('select2');
-Route::post('select2','DemoController@select2Post');
+Route::get('select2', 'DemoController@select2')->name('select2');
+Route::post('select2', 'DemoController@select2Post');
 
-Auth::routes();
+//Export Demo
+Route::get('export/user', 'ExportController@exportUser')->name('export.user');
+Route::get('export/post', 'ExportController@exportPost')->name('export.post');
+
 
 Route::get('/home', 'HomeController@index')->name('home');

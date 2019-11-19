@@ -1,23 +1,5 @@
 @extends('layouts.app')
 
-@section('css')
-<style>
-    td.details-control {
-        background: url('/images/details_open.png') no-repeat center center;
-        cursor: pointer;
-        width: 18px;
-        background-size:1rem 1rem; 
-    }
-    tr.shown td.details-control {
-        background: url('/images/details_close.png') no-repeat center center;
-        cursor: pointer;
-        width: 18px;
-        background-size:1rem 1rem; 
-    },
-    
-</style>
-@endsection
-
 @section('content')
 <table class="table table-bordered" id="users-table">
     <thead>

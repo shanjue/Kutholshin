@@ -90,6 +90,8 @@
                         <li><a href="{{route('laraveldatatable')}}">Simple Laravel-Datatable</a></li>
                         <li><a href="{{route('laraveldatatable2')}}">Laravel-Datatable With Edit Delete</a></li>
                         <li><a href="{{route('laraveldatatable3')}}">Laravel-Datatable With Relation Posts and Posts Count</a></li>
+                        <li><a href="{{route('export.user')}}">Export User</a></li>
+                        <li><a href="{{route('export.post')}}">Export Posts</a></li>
                         <li><a href="{{route('select2')}}">Select2</a></li>
                     </ul>
                     

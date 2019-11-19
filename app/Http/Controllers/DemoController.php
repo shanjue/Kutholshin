@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\PostsDataTable;
 use App\User;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use App\DataTables\UsersDataTable;
 
 class DemoController extends Controller
 {
