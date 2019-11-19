@@ -85,10 +85,18 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('datatable')}}">Datatable with bs-4</a>
-                    <a href="{{route('laraveldatatable')}}">Simple Laravel Datatable</a>
-                    <a href="{{route('laraveldatatable2')}}">Laravel Datatable With Edit Delete</a>
-                    <a href="{{route('select2')}}">Select2</a>
+                    <ul>
+                        <li><a href="{{route('datatable')}}">Datatable with bs-4</a></li>
+                        <li><a href="{{route('laraveldatatable')}}">Simple Laravel-Datatable</a></li>
+                        <li><a href="{{route('laraveldatatable2')}}">Laravel-Datatable With Edit Delete</a></li>
+                        <li><a href="{{route('laraveldatatable3')}}">Laravel-Datatable With Relation Posts and Posts Count</a></li>
+                        <li><a href="{{route('select2')}}">Select2</a></li>
+                    </ul>
+                    
+                    
+                    
+                    
+                    
                 </div>
             </div>
         </div>

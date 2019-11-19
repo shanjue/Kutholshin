@@ -1,6 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\DataTables\UsersDataTable;
+
+Route::get('export', function(UsersDataTable $dataTable) {
+    return $dataTable->render('export.user');
+});
 
 
 /*
