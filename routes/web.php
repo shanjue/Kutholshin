@@ -61,6 +61,8 @@ Route::post('select2', 'DemoController@select2Post');
 
 //Export Demo
 Route::get('export/user', 'ExportController@exportUser')->name('export.user');
+Route::get('export/user2', 'ExportController@exportUser2')->name('export.user2');
+Route::get('savepdftozipimage','ExportController@savePdfToZipImage');
 Route::get('export/post', 'ExportController@exportPost')->name('export.post');
 
 
