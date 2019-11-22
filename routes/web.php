@@ -63,6 +63,9 @@ Route::post('select2', 'DemoController@select2Post');
 Route::get('export/user', 'ExportController@exportUser')->name('export.user');
 Route::get('export/user2', 'ExportController@exportUser2')->name('export.user2');
 Route::get('savepdftozipimage','ExportController@savePdfToZipImage');
+Route::get('saveimage','ExportController@saveImage');
+Route::get('saveimageview/{id}','ExportController@saveImageView')->name('saveimage.view');
+Route::get('savepdfview/{id}','ExportController@savePdfView')->name('savepdf.view');
 Route::get('export/post', 'ExportController@exportPost')->name('export.post');
 
 

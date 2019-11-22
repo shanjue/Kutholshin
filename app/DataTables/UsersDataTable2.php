@@ -56,13 +56,12 @@ class UsersDataTable2 extends DataTable
                     [
                         'text' => 'Save PDF and Zip Image',
                         'className' => '',
-                        'action' => 'function(e, dt, node, config) { 
-                            $.ajax({
-                                url: "/savepdftozipimage",
-                                data: {action: "myCustomAction"},
-                                success: function(response) { console.log(response); window.location = response; }
-                              })
-                        }'
+                        'action' => 'function(){window.location = "/savepdftozipimage"}'
+                    ],
+                    [
+                        'text' => 'Save Image',
+                        'className' => '',
+                        'action' => 'function(){window.location = "/saveimage"}'
                     ]
                 ],
             ]);

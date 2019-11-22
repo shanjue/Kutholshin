@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use File;
 use Imagick;
+use App\User;
 use ZipArchive;
-
+use Illuminate\Http\Request;
 use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
 use App\DataTables\PostsDataTable;
 use App\DataTables\UsersDataTable;
 use App\DataTables\UsersDataTable2;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\Snappy\Facades\SnappyImage;
+use Illuminate\Support\Facades\Response;
 
 class ExportController extends Controller
 {
@@ -47,6 +51,28 @@ class ExportController extends Controller
         return $dataTable->render('export.post');
     }
 
+    public function saveImage(UsersDataTable2 $dataTable)
+    {
+        $html = $dataTable->printPreview();
+        return SnappyImage::loadHTML($html)->download('myfile.jpg');
+    }
+    public function savePdfView(Request $request)
+    {
+        $user = User::find($request->id);
+        $view = View::make('export.usershow',compact('user'));
+        $html = $view->render();
+        $pdf = SnappyPdf::loadHtml($html)->download();
+        return $pdf;
+    }
+    public function saveImageView(Request $request)
+    {
+        $user = User::find($request->id);
+        $view = View::make('export.usershowimage',compact('user'));
+        $html = $view->render();
+        $image = SnappyImage::loadHtml($html);
+        // dd($image);
+        return $image->download('invoice.jpg');
+    }
     public function savePdfToZipImage(UsersDataTable $dataTable)
     {
         //generate pdf
@@ -69,8 +95,10 @@ class ExportController extends Controller
         //generate jpg folder to zip
         $rootPath = $imagePath;
         $savePath = $imagePath;
+        // $temp_zip = tempnam("/tmp", "");
+        $temp_zip = tempnam(sys_get_temp_dir(), "");
         $zip = new ZipArchive();
-        $zip->open("$imagePath/file.zip", ZipArchive::CREATE | ZipArchive::OVERWRITE);
+        $zip->open($temp_zip, ZipArchive::CREATE | ZipArchive::OVERWRITE);
 
         // Initialize empty "delete list"
         $filesToDelete = array();
@@ -103,7 +131,19 @@ class ExportController extends Controller
         foreach ($filesToDelete as $file) {
             unlink($file);
         }
-        return "/storage/image/$foldername/file.zip";
+        // unlink(public_path("/storage/image/$filename/file.zip"));
+        header('Content-Description: File Transfer');
+        header('Content-Disposition: attachment; filename=data.zip');
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($temp_zip));
+        ob_clean();
+        flush();
+        readfile($temp_zip);
+        unlink($temp_zip); 
+        
         // return Response::download("$imagePath/file.zip");
     }
 
