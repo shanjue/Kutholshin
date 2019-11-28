@@ -15,12 +15,12 @@ class duskSpiderTest extends DuskTestCase
 {
 
     protected static $domain = '127.0.0.1';
-    protected static $startUrl = 'http://127.0.0.1:8000/kutholshin/';
+    protected static $startUrl = 'http://127.0.0.1:8000/';
 
     public function setUp(): void
     {
         parent::setUp();
-        $this->artisan('migrate:fresh --seed');
+        $this->artisan('migrate:fresh');
     }
     /** @test */
     public function urlSpider()
