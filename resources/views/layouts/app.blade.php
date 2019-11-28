@@ -34,7 +34,7 @@
         }
     </style>
 
-    <title>{{config('app.name')}}</title>
+    <title>@yield('title')</title>
 </head>
 
 <body>

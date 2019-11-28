@@ -88,7 +88,7 @@
             </div>
 
             <div class="links">
-                <a href="{{route('kutholshin')}}">Kutholshin</a>
+                <a href="{{route('kutholshin')}}" dusk="kutholshin-link">Kutholshin</a>
             </div>
         </div><br><br>
         <div class="content">
