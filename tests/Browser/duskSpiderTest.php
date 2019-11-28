@@ -15,7 +15,7 @@ class duskSpiderTest extends DuskTestCase
 {
 
     protected static $domain = '127.0.0.1';
-    protected static $startUrl = 'http://127.0.0.1:8000/';
+    protected static $startUrl = 'http://127.0.0.1:8000/kutholshin/';
 
     public function setUp(): void
     {
@@ -29,9 +29,9 @@ class duskSpiderTest extends DuskTestCase
             'url' => self::$startUrl,
             'isCrawled' => false,
         ]);
-        
-        $this->browse(function (Browser $browser) use ($startingLink) {
-            $this->getLinks($browser, $startingLink);
+        $user = factory('App\User')->create();
+        $this->browse(function (Browser $browser) use ($startingLink, $user) {
+            $this->getLinks($browser->loginAs($user), $startingLink);
         });
     }
     protected function getLinks(Browser $browser, $currentUrl)
@@ -50,10 +50,8 @@ class duskSpiderTest extends DuskTestCase
             return;
 
         //Visit URL
-        $user = factory('App\User')->create();
-        $browser->loginAs($user)
-                ->visit($currentUrl->url)
-                ->assertTitle($browser->driver->getTitle());
+        $browser->visit($currentUrl->url)
+            ->assertTitle($browser->driver->getTitle());
 
         //Get Links and Save to DB if Valid
         $linkElements = $browser->driver->findElements(WebDriverBy::tagName('a'));
