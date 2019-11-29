@@ -59,6 +59,9 @@ Route::get('user/posts/{user_id}', 'DemoController@userPosts');
 Route::get('select2', 'DemoController@select2')->name('select2');
 Route::post('select2', 'DemoController@select2Post');
 
+Route::get('async-await','DemoController@asyncAwait')->name('async.await');
+Route::get('getUserAsyncAwait','DemoController@getUserAsyncAwait');
+
 //Export Demo
 Route::get('export/user', 'ExportController@exportUser')->name('export.user');
 Route::get('export/user2', 'ExportController@exportUser2')->name('export.user2');

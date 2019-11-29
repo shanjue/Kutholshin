@@ -97,6 +97,7 @@
                     <li><a href="{{route('export.user2')}}">Export User2 By Zip Img and Image Only</a></li>
                     <li><a href="{{route('export.post')}}">Export Posts</a></li>
                     <li><a href="{{route('select2')}}">Select2</a></li>
+                    <li><a href="{{route('async.await')}}">Javascript Async Await</a></li>
                 </ul>
 
 

@@ -15,6 +15,20 @@ class DemoController extends Controller
         return view('demo.kutholshin');
     }
 
+    public function asyncAwait()
+    {
+        return view('demo.asyncawait');
+    }
+
+    public function getUserAsyncAwait()
+    {
+        
+        return [
+            ['username'=>'mgmg'],
+            ['username'=>'bobo']
+        ];
+    }
+
     public function laravelDatatable()
     {
         return view('demo.laraveldatatable');
