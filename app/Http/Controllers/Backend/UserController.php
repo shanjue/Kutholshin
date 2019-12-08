@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.user.create');
     }
 
     /**
@@ -47,7 +47,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $alldata = request()->all();
+        $alldata['active'] = 0;
+        
+        // dd($alldata);
+        User::create($alldata);
+
+
+
+        return 'ok';
     }
 
     /**
@@ -59,7 +67,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('backend.user.show',compact('user'));
+        return view('backend.user.show', compact('user'));
     }
 
     /**

@@ -59,16 +59,27 @@ Route::get('user/posts/{user_id}', 'DemoController@userPosts');
 Route::get('select2', 'DemoController@select2')->name('select2');
 Route::post('select2', 'DemoController@select2Post');
 
-Route::get('async-await','DemoController@asyncAwait')->name('async.await');
-Route::get('getUserAsyncAwait','DemoController@getUserAsyncAwait');
+Route::get('async-await', 'DemoController@asyncAwait')->name('async.await');
+Route::get('getUserAsyncAwait', 'DemoController@getUserAsyncAwait');
+
+/**
+ * Post Create With Laravel Trix
+ */
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('create/post/withLaravel-Trix', 'DemoController@createPost')->name('post.create');
+    Route::post('create/post/withLaravel-Trix', 'DemoController@savePost');
+    Route::get('edit/post/withLaravel-Trix/{id}', 'DemoController@editPost')->name('post.edit');
+    Route::post('edit/post/withLaravel-Trix/{id}', 'DemoController@updatePost');
+});
+
 
 //Export Demo
 Route::get('export/user', 'ExportController@exportUser')->name('export.user');
 Route::get('export/user2', 'ExportController@exportUser2')->name('export.user2');
-Route::get('savepdftozipimage','ExportController@savePdfToZipImage');
-Route::get('saveimage','ExportController@saveImage');
-Route::get('saveimageview/{id}','ExportController@saveImageView')->name('saveimage.view');
-Route::get('savepdfview/{id}','ExportController@savePdfView')->name('savepdf.view');
+Route::get('savepdftozipimage', 'ExportController@savePdfToZipImage');
+Route::get('saveimage', 'ExportController@saveImage');
+Route::get('saveimageview/{id}', 'ExportController@saveImageView')->name('saveimage.view');
+Route::get('savepdfview/{id}', 'ExportController@savePdfView')->name('savepdf.view');
 Route::get('export/post', 'ExportController@exportPost')->name('export.post');
 
 

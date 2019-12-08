@@ -98,6 +98,7 @@
                     <li><a href="{{route('export.post')}}">Export Posts</a></li>
                     <li><a href="{{route('select2')}}">Select2</a></li>
                     <li><a href="{{route('async.await')}}">Javascript Async Await</a></li>
+                    <li><a href="{{route('post.create')}}">Post Create with Laravel-Trix</a></li>
                 </ul>
 
 

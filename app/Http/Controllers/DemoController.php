@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 use App\DataTables\UsersDataTable;
+use App\Post;
 
 class DemoController extends Controller
 {
@@ -22,10 +23,10 @@ class DemoController extends Controller
 
     public function getUserAsyncAwait()
     {
-        
+
         return [
-            ['username'=>'mgmg'],
-            ['username'=>'bobo']
+            ['username' => 'mgmg'],
+            ['username' => 'bobo']
         ];
     }
 
@@ -120,5 +121,32 @@ class DemoController extends Controller
     public function select2Post(Request $request)
     {
         return $request->all();
+    }
+
+    public function createPost()
+    {
+        $posts = Post::all();
+        return view('demo.post.createpost',compact('posts'));
+    }
+
+    public function savePost()
+    {
+        Post::create(request()->all());
+        
+        return back();
+    }
+
+    public function editPost($id)
+    {
+        $post = Post::find($id);
+        return view('demo.post.editpost', compact('post'));
+    }
+
+    public function updatePost($id)
+    {
+        $post = Post::find($id);
+        $post->update(request()->all());
+
+        return redirect(route('post.create'));
     }
 }
