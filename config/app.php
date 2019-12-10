@@ -164,7 +164,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\ButtonsServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
-
+        YbrNX\MariaDB\MariaDBServiceProvider::class,
         /*
          * Package Service Providers...
          */

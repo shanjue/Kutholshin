@@ -19,6 +19,11 @@
             animation: slide 0.5s forwards;
         }
 
+        .img-size {
+            width: 200px;
+            height: 200px;
+        }
+
         @keyframes slide {
             100% {
                 top: 30px;

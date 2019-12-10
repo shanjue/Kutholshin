@@ -36,6 +36,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 Route::prefix('backend')->namespace('Backend')->group(function () {
     Route::resource('center', 'CenterController');
     Route::resource('user', 'UserController');
+    Route::resource('news', 'NewsController');
 });
 
 Route::get('home', 'HomeController@index')->name('home');
