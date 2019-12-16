@@ -99,6 +99,7 @@
                     <li><a href="{{route('select2')}}">Select2</a></li>
                     <li><a href="{{route('async.await')}}">Javascript Async Await</a></li>
                     <li><a href="{{route('post.create')}}">Post Create with Laravel-Trix</a></li>
+                    <li><a href="{{route('testcomponent')}}">Create News Test Component</a></li>
                 </ul>
 
 

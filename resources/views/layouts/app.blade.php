@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('css')
+    @stack('css')
     <style>
         /* these styles will animate bootstrap alerts. */
         .alert {
@@ -71,6 +72,7 @@
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
     @yield('js')
+    @stack('js')
     <script>
         $(document).ready(function() {
             //close the alert after 3 seconds
