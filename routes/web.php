@@ -39,7 +39,10 @@ Route::prefix('backend')->namespace('Backend')->group(function () {
     Route::resource('news', 'NewsController');
 });
 
-Route::get('home', 'HomeController@index')->name('home');
+// encrypt and decrypt to s3
+Route::get('file-vault-encryption', 'FileVaultController@index')->name('filevault');
+Route::post('file-vault-encryption', 'FileVaultController@store');
+Route::get('file-vault-encryption/downloadfile/{filename}', 'FileVaultController@downloadFile')->name('filevault.downloadFile');
 
 //Success Demo 
 Route::get('kutholshin', 'DemoController@kutholshin')->name('kutholshin');
@@ -84,4 +87,4 @@ Route::get('savepdfview/{id}', 'ExportController@savePdfView')->name('savepdf.vi
 Route::get('export/post', 'ExportController@exportPost')->name('export.post');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');

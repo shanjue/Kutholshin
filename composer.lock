@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b51e98700ab9aa7a900d70c0cf2dce33",
+    "content-hash": "be1379545c30fb7ebe592480b215bd07",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1528,6 +1528,53 @@
             "time": "2019-06-05T17:18:29+00:00"
         },
         {
+            "name": "league/flysystem-cached-adapter",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-cached-adapter.git",
+                "reference": "08ef74e9be88100807a3b92cc9048a312bf01d6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-cached-adapter/zipball/08ef74e9be88100807a3b92cc9048a312bf01d6f",
+                "reference": "08ef74e9be88100807a3b92cc9048a312bf01d6f",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "~1.0",
+                "psr/cache": "^1.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpspec/phpspec": "^3.4",
+                "phpunit/phpunit": "^5.7",
+                "predis/predis": "~1.0",
+                "tedivm/stash": "~0.12"
+            },
+            "suggest": {
+                "ext-phpredis": "Pure C implemented extension for PHP"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\Cached\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "frankdejonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "An adapter decorator to enable meta-data caching.",
+            "time": "2018-07-09T20:51:04+00:00"
+        },
+        {
             "name": "league/glide",
             "version": "1.5.0",
             "source": {
@@ -2434,6 +2481,52 @@
             "time": "2019-11-06T22:27:00+00:00"
         },
         {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "time": "2016-08-06T20:24:11+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "1.0.0",
             "source": {
@@ -3189,6 +3282,69 @@
                 "writable"
             ],
             "time": "2019-01-01T16:15:09+00:00"
+        },
+        {
+            "name": "soarecostin/file-vault",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/soarecostin/file-vault.git",
+                "reference": "aa42c266652b5da36faef657870538be2b23294f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/soarecostin/file-vault/zipball/aa42c266652b5da36faef657870538be2b23294f",
+                "reference": "aa42c266652b5da36faef657870538be2b23294f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.8.* || 6.*.*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.8.*",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SoareCostin\\FileVault\\FileVaultServiceProvider"
+                    ],
+                    "aliases": {
+                        "FileVault": "SoareCostin\\FileVault\\Facades\\FileVault"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SoareCostin\\FileVault\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Costin Soare",
+                    "email": "soarecostin@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/soarecostin/file-vault",
+            "keywords": [
+                "CBC",
+                "decrypt",
+                "decryption",
+                "encrypt",
+                "encryption",
+                "file",
+                "file-vault",
+                "laravel",
+                "php"
+            ],
+            "time": "2019-11-19T21:56:14+00:00"
         },
         {
             "name": "spatie/image",
