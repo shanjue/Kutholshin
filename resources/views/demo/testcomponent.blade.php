@@ -78,18 +78,36 @@
                     'type' => 'calendar',
                     'label' => 'Date Of Birth',
                     'name' => 'dob',
-                    'edit' => false,
+                    'data' => '2019/01/11',
+                    'required' => true,
                     'design' => 'horizontal',
-                    'required' => true
                     ])
 
                     @input([
                     'type' => 'calendar',
                     'label' => 'Date Of Birth',
-                    'name' => 'dob',
+                    'name' => 'dobtwo',
                     'data' => '2019/08/22',
+                    'required' => true,
+                    'design' => 'line',
+                    ])
+
+                    @input([
+                    'type' => 'textarea',
+                    'label' => 'Description',
+                    'name' => 'description',
                     'design' => 'horizontal',
-                    'required' => true
+                    'required' => true,
+                    'data' => 'Some Description For Edit',
+                    ])
+
+                    @input([
+                    'type' => 'textarea',
+                    'label' => 'Description Two',
+                    'name' => 'descriptiontwo',
+                    'design' => 'line',
+                    'required' => true,
+                    'data' => 'Some Description two For Edit',
                     ])
 
 

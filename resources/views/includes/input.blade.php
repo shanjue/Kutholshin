@@ -65,7 +65,7 @@
     </div>
 </div>
 @elseif($design == 'horizontal')
-<div class="form-group {{ $errors->has("$name") ? 'has-error' : '' }}">
+<div class="form-group">
     <label for="{{ $name }}">
         {{ $label }}
         @if(isset($required))@if($required == true)<span style="font-size:20px;color:red;">*</span>@endif @endif
@@ -120,15 +120,64 @@
 
 <!-- Start Calendar -->
 @if($type == 'calendar')
-@if($design = 'horizontal')
-<div class="form-grouprow">
+@if($design == 'line')
+<div class="form-group row">
     <label for="{{$name}}" class="col-md-4 col-form-label text-md-right">{{$label}}@if(isset($required))@if($required == true)<span style="font-size:20px;color:red;">*</span>@endif @endif</label>
+
     <div class="col-md-6">
         <div class="input-group date">
-            <input type="text" name="{{$name}}" class="form-control pull-right datepicker" id="datepicker" @if(isset($required)) @if($required==true) required @endif @endif value='{{ $data ?? old("$name")}}' placeholder="{{$label}}">
+            <input type="text" name="{{$name}}" class='form-control pull-right datepicker @error("$name") is-invalid @enderror @if(isset($class)) @foreach($class as $val) {{$val}} @endforeach @endif' id="datepicker" @if(isset($required)) @if($required==true) required @endif @endif value='{{ $data ?? old("$name")}}' placeholder="{{$label}}">
+            @error("$name")
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
     </div>
+</div>
+@elseif($design == 'horizontal')
+<div class="form-group">
+    <label for="{{$name}}">{{$label}}@if(isset($required))@if($required == true)<span style="font-size:20px;color:red;">*</span>@endif @endif</label>
+
+    <div class="input-group date">
+        <input type="text" name="{{$name}}" class='form-control pull-right datepicker @error("$name") is-invalid @enderror @if(isset($class)) @foreach($class as $val) {{$val}} @endforeach @endif' id="datepicker" @if(isset($required)) @if($required==true) required @endif @endif value='{{ $data ?? old("$name")}}' placeholder="{{$label}}">
+        @error("$name")
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+
 </div>
 @endif
 @endif
 <!-- End Calendar -->
+
+<!-- Start TextArea -->
+@if($type == 'textarea')
+@if($design == 'horizontal')
+<div class="form-group">
+    <label for="{{$name}}">{{$label}}@if(isset($required))@if($required == true)<span style="font-size:20px;color:red;">*</span>@endif @endif</label>
+    <textarea id="{{$name}}" name="{{$name}}" rows="3" placeholder="{{$label}}" class='form-control @error("$name") is-invalid @enderror @if(isset($class)) @foreach($class as $val) {{$val}} @endforeach @endif' @if(isset($required)) @if($required==true) required @endif @endif>{{ $data ?? old("$name")}}</textarea>
+    @error("$name")
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+    @enderror
+</div>
+@elseif($design == 'line')
+<div class="form-group row">
+    <label for="{{$name}}" class="col-md-4 col-form-label text-md-right">{{$label}}@if(isset($required))@if($required == true)<span style="font-size:20px;color:red;">*</span>@endif @endif</label>
+
+    <div class="col-md-6">
+        <textarea id="{{$name}}" name="{{$name}}" rows="3" placeholder="{{$label}}" class='form-control @error("$name") is-invalid @enderror @if(isset($class)) @foreach($class as $val) {{$val}} @endforeach @endif' @if(isset($required)) @if($required==true) required @endif @endif>{{ $data ?? old("$name")}}</textarea>
+        @error("$name")
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+</div>
+@endif
+@endif
+<!-- End TextArea -->
