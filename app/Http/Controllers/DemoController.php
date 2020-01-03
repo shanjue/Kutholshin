@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 use App\DataTables\UsersDataTable;
 use App\Post;
+use Illuminate\Support\Facades\Validator;
 
 class DemoController extends Controller
 {
@@ -126,13 +127,13 @@ class DemoController extends Controller
     public function createPost()
     {
         $posts = Post::all();
-        return view('demo.post.createpost',compact('posts'));
+        return view('demo.post.createpost', compact('posts'));
     }
 
     public function savePost()
     {
         Post::create(request()->all());
-        
+
         return back();
     }
 
@@ -148,5 +149,34 @@ class DemoController extends Controller
         $post->update(request()->all());
 
         return redirect(route('post.create'));
+    }
+
+
+    public function testComponent()
+    {
+        return view('demo.testcomponent');
+    }
+
+    public function testPostComponent(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'image' => 'required',
+            'imagehorizontal' => 'required',
+            'title' => 'required|unique:posts|max:255|numeric',
+            'titleforedit' => 'required|max:25|numeric',
+            'content' => 'required|numeric',
+            'contentedit' => 'required|numeric',
+            'dob' => 'required|string',
+            'dobtwo' => 'required|string',
+            'description' => 'required|numeric',
+            'descriptiontwo' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)
+                ->withInput();
+        }
+
+        return back()->withInput($request->input());
     }
 }

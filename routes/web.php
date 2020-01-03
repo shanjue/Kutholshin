@@ -66,6 +66,9 @@ Route::post('select2', 'DemoController@select2Post');
 Route::get('async-await', 'DemoController@asyncAwait')->name('async.await');
 Route::get('getUserAsyncAwait', 'DemoController@getUserAsyncAwait');
 
+Route::get('testcomponent','DemoController@testComponent')->name('testcomponent');
+Route::post('testcomponent','DemoController@testPostComponent');
+
 /**
  * Post Create With Laravel Trix
  */

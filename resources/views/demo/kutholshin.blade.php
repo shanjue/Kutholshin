@@ -100,11 +100,8 @@
                     <li><a href="{{route('async.await')}}">Javascript Async Await</a></li>
                     <li><a href="{{route('post.create')}}">Post Create with Laravel-Trix</a></li>
                     <li><a href="{{route('filevault')}}">File Vault Encryption</a></li>
+                    <li><a href="{{route('testcomponent')}}">Test Component</a></li>
                 </ul>
-
-
-
-
 
             </div>
         </div>
