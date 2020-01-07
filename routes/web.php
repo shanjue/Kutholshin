@@ -89,5 +89,7 @@ Route::get('saveimageview/{id}', 'ExportController@saveImageView')->name('saveim
 Route::get('savepdfview/{id}', 'ExportController@savePdfView')->name('savepdf.view');
 Route::get('export/post', 'ExportController@exportPost')->name('export.post');
 
+//Spatie laravel html
+Route::get('spatielaravelhtml','SpatieLaravelHtmlController@createForm');
 
 Route::get('home', 'HomeController@index')->name('home');

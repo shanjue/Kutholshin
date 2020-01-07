@@ -165,6 +165,7 @@ return [
         Yajra\DataTables\ButtonsServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
         YbrNX\MariaDB\MariaDBServiceProvider::class,
+        Spatie\Html\HtmlServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -231,7 +232,7 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
-
+        'Html' => Spatie\Html\Facades\Html::class,
     ],
 
 ];

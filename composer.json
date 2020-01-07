@@ -19,6 +19,7 @@
         "league/flysystem-aws-s3-v3": "^1.0",
         "league/flysystem-cached-adapter": "^1.0",
         "soarecostin/file-vault": "^1.0",
+        "spatie/laravel-html": "^2.24",
         "spatie/laravel-medialibrary": "^7.0.0",
         "te7a-houdini/laravel-trix": "^1.1",
         "yajra/laravel-datatables-buttons": "^4.0",
