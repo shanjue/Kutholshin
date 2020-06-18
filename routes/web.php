@@ -1,21 +1,21 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('laravel_echo_test',function(){
+    return view('laravel_echo_test');
+});
+
+Route::get('fire_event_to_test_laravel_echo',function(){
+    event(new \App\Events\SendMessage());
+    dd('Event Run Successfully.');
+});
+
 Auth::routes();
+
+Route::get('email', 'JobController@processQueue');
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::get('/dashboard', 'HomeController@index')->name('home');

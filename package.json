@@ -30,7 +30,9 @@
         "font-awesome": "^4.7.0",
         "handlebars": "^4.5.2",
         "jquery": "^3.4.1",
+        "laravel-echo": "^1.8.0",
         "popper.js": "^1.16.0",
-        "select2": "^4.0.12"
+        "select2": "^4.0.12",
+        "socket.io-client": "^2.3.0"
     }
 }
