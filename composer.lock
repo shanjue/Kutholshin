@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41ae4e32c55878a8161ad84951512b3d",
+    "content-hash": "f6a9e65e85fe8b80d519ea64ce4242ad",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2487,12 +2487,12 @@
             "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
+                "url": "https://github.com/predis/predis.git",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "url": "https://api.github.com/repos/predis/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": ""
             },
@@ -2529,6 +2529,16 @@
                 "nosql",
                 "predis",
                 "redis"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tillkruss",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/tillkruss",
+                    "type": "github"
+                }
             ],
             "time": "2016-06-16T16:22:20+00:00"
         },
@@ -2946,17 +2956,17 @@
             ],
             "authors": [
                 {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com",
+                    "homepage": "https://benramsey.com"
+                },
+                {
                     "name": "Marijn Huizendveld",
                     "email": "marijn.huizendveld@gmail.com"
                 },
                 {
                     "name": "Thibaud Fabre",
                     "email": "thibaud@aztech.io"
-                },
-                {
-                    "name": "Ben Ramsey",
-                    "email": "ben@benramsey.com",
-                    "homepage": "https://benramsey.com"
                 }
             ],
             "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
@@ -5532,6 +5542,55 @@
                 "laravel"
             ],
             "time": "2019-11-11T15:07:50+00:00"
+        },
+        {
+            "name": "ybr-nx/laravel-mariadb",
+            "version": "1.0.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ybr-nx/laravel-mariadb.git",
+                "reference": "1dd893432237e28d5d43d1de110be925602dd37d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ybr-nx/laravel-mariadb/zipball/1dd893432237e28d5d43d1de110be925602dd37d",
+                "reference": "1dd893432237e28d5d43d1de110be925602dd37d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "YbrNX\\MariaDB\\MariaDBServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "YbrNX\\MariaDB\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "EUPL-1.2"
+            ],
+            "authors": [
+                {
+                    "name": "Ingmar Aasoja",
+                    "email": "ingmar@aasoja.ee"
+                }
+            ],
+            "description": "Add MariaDB JSON select support to Laravel",
+            "keywords": [
+                "database",
+                "json",
+                "laravel",
+                "mariadb"
+            ],
+            "time": "2019-09-11T05:18:47+00:00"
         }
     ],
     "packages-dev": [
@@ -5765,12 +5824,12 @@
             "version": "1.7.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/facebook/php-webdriver.git",
+                "url": "https://github.com/php-webdriver/php-webdriver-archive.git",
                 "reference": "e43de70f3c7166169d0f14a374505392734160e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/e43de70f3c7166169d0f14a374505392734160e5",
+                "url": "https://api.github.com/repos/php-webdriver/php-webdriver-archive/zipball/e43de70f3c7166169d0f14a374505392734160e5",
                 "reference": "e43de70f3c7166169d0f14a374505392734160e5",
                 "shasum": ""
             },
@@ -5818,6 +5877,7 @@
                 "selenium",
                 "webdriver"
             ],
+            "abandoned": "php-webdriver/webdriver",
             "time": "2019-06-13T08:02:18+00:00"
         },
         {
@@ -6845,6 +6905,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
@@ -7699,55 +7760,6 @@
                 "validate"
             ],
             "time": "2019-11-24T13:36:37+00:00"
-        },
-        {
-            "name": "ybr-nx/laravel-mariadb",
-            "version": "1.0.20",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ybr-nx/laravel-mariadb.git",
-                "reference": "1dd893432237e28d5d43d1de110be925602dd37d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ybr-nx/laravel-mariadb/zipball/1dd893432237e28d5d43d1de110be925602dd37d",
-                "reference": "1dd893432237e28d5d43d1de110be925602dd37d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": ">=5.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "YbrNX\\MariaDB\\MariaDBServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "YbrNX\\MariaDB\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "EUPL-1.2"
-            ],
-            "authors": [
-                {
-                    "name": "Ingmar Aasoja",
-                    "email": "ingmar@aasoja.ee"
-                }
-            ],
-            "description": "Add MariaDB JSON select support to Laravel",
-            "keywords": [
-                "database",
-                "json",
-                "laravel",
-                "mariadb"
-            ],
-            "time": "2019-09-11T05:18:47+00:00"
         }
     ],
     "aliases": [],
