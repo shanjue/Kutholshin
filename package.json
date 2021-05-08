@@ -28,7 +28,7 @@
         "datatables.net-buttons-bs4": "^1.6.1",
         "datatables.net-dt": "^1.10.20",
         "font-awesome": "^4.7.0",
-        "handlebars": "^4.5.2",
+        "handlebars": "^4.7.7",
         "jquery": "^3.5.0",
         "laravel-echo": "^1.8.0",
         "popper.js": "^1.16.0",
